@@ -17,15 +17,14 @@ class MainActivity : RobotActivity() , RobotLifecycleCallbacks {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         QiSDK.register(this,this)
-//        binding.button.setOnClickListener {
-//            tts!!.speakOut("გამარჯობა, მე ვარ რობოტი პეპერი")
-//        }
+        binding.button.setOnClickListener {
+            tts!!.speakOut("გამარჯობა, მე ვარ რობოტი პეპერი")
+        }
     }
 
     override fun onRobotFocusGained(qiContext: QiContext?) {
         this.qiContext=qiContext
         tts = TTSUtils(this, qiContext!!)
-
 
     }
 

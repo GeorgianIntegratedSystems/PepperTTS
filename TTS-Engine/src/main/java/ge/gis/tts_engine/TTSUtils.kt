@@ -13,13 +13,17 @@ class TTSUtils(context: Context, qiContext: QiContext) : TextToSpeech.OnInitList
 
 
     override fun onInit(status: Int) {
-        if (status == TextToSpeech.SUCCESS) {
-            if (status == TextToSpeech.LANG_MISSING_DATA) {
-                Log.e("TTS", "The Language specified is not supported!")
-            } else {
-                Log.e("TTS", "Initialization Failed ! Error Code:$status")
+            when(status){
+                TextToSpeech.LANG_MISSING_DATA -> Log.e("TTS", "The Language specified is not supported!")
+                TextToSpeech.ERROR_INVALID_REQUEST -> Log.e("TTS", "ERROR INVALI REQUEST")
+                TextToSpeech.ERROR_NETWORK -> Log.e("TTS", "ERROR NETWORK")
+                TextToSpeech.ERROR_NETWORK_TIMEOUT -> Log.e("TTS", "ERROR NETWORK TIMEOUT")
+                TextToSpeech.ERROR_NOT_INSTALLED_YET -> Log.e("TTS", "ERROR NOT INSTALLED YET")
+                TextToSpeech.ERROR_OUTPUT -> Log.e("TTS", "ERROR OUTPUT")
+                TextToSpeech.ERROR_SERVICE -> Log.e("TTS", "ERROR SERVICE")
+                TextToSpeech.ERROR_SYNTHESIS -> Log.e("TTS", "ERROR SYNTHESIS")
+                TextToSpeech.SUCCESS -> Log.i("TTS", "TTS IS INITIALIZED")
             }
-        }
     }
 
 
