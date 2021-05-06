@@ -17,6 +17,7 @@ class MainActivity : RobotActivity() , RobotLifecycleCallbacks {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         QiSDK.register(this,this)
+
         binding.button.setOnClickListener {
             tts!!.speakOut("გამარჯობა, მე ვარ რობოტი პეპერი")
         }
