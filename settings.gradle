@@ -1,0 +1,3 @@
+include ':TTS-Engine'
+include ':app'
+rootProject.name = "Pepper TTS"
