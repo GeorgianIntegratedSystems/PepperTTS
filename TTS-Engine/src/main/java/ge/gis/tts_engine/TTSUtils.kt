@@ -17,15 +17,13 @@ class TTSUtils(context: Context, qiContext: QiContext) : TextToSpeech.OnInitList
             if (status == TextToSpeech.LANG_MISSING_DATA) {
                 Log.e("TTS", "The Language specified is not supported!")
             } else {
-                Log.e("TTS", "Initialization Failed !")
+                Log.e("TTS", "Initialization Failed ! Error Code:$status")
             }
         }
     }
 
 
     fun speakOut(text: String){
-
-        tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
 
         tts!!.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
             override fun onStart(utteranceId: String) {
@@ -50,12 +48,12 @@ class TTSUtils(context: Context, qiContext: QiContext) : TextToSpeech.OnInitList
 
             }
         })
+
+        tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
+
     }
 
     fun stopSpeaking() {
-
         tts!!.stop()
-
     }
-
 }
