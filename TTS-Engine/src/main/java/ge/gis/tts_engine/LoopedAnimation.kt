@@ -14,9 +14,18 @@ class LoopedAnimation(private val qiContext: QiContext, private val delayInSecon
     companion object {
         private const val TAG = "SolitariesLoop"
     }
-
     private val animationNames = arrayOf(
-        "left_hand_to_mouth_b001.qianim"
+        "affirmation_a001.qianim",
+        "affirmation_a002.qianim",
+        "affirmation_a003.qianim",
+        "affirmation_a004.qianim",
+        "affirmation_a005.qianim",
+        "affirmation_a006.qianim",
+        "affirmation_a007.qianim",
+        "affirmation_a008.qianim",
+        "affirmation_a009.qianim",
+        "affirmation_a010.qianim",
+        "affirmation_a011.qianim",
     )
     private var animationNamesQueue = mutableListOf<String>()
     private var lastAnimationName = ""

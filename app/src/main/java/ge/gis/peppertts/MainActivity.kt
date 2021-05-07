@@ -20,7 +20,7 @@ class MainActivity : RobotActivity() , RobotLifecycleCallbacks {
 
         binding.button.setOnClickListener {
             tts!!.speakOut("გამარჯობა, მე ვარ რობოტი პეპერი")
-        }
+                    }
     }
 
     override fun onRobotFocusGained(qiContext: QiContext?) {
