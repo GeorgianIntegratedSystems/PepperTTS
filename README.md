@@ -19,7 +19,7 @@ Step 2) Add the dependency to your app build.gradle in the dependencies section:
 ```gradle
 dependencies {
 ...
-    implementation 'com.github.GeorgianIntergratedSystems:PepperTTS:0.1.3'
+    implementation 'com.github.GeorgianIntergratedSystems:PepperTTS:0.1.4'
 }
   ```
 
